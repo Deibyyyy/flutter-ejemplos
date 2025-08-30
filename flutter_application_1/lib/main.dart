@@ -228,18 +228,14 @@ class _ListTileExampleState extends State<ListTileExample> {
     return Scaffold(
       appBar: AppBar(title: const Text('Custom List Item Sample')),
       body: ListView.builder(
-        // +1 para agregar la card al final
         itemCount: programmingLanguages.length + 1,
         itemBuilder: (BuildContext context, int index) {
-          // si estamos en el último índice -> mostramos la card
           if (index == programmingLanguages.length) {
             return const Padding(
               padding: EdgeInsets.all(12.0),
               child: CardExample(),
             );
           }
-
-          // si no, mostramos los lenguajes
           return ListTile(
             leading: Icon(
               index == _selectedIndex
